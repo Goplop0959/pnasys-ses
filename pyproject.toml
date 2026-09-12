@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pnasys-ses"
+version = "0.1.0"
+description = "PNASystems Secure Encryption Service — TPM/file vault with access+encryption keys"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pnasys-encryption-service>=1.12", "cryptography>=41"]
+authors = [{name="PNASystems"}]
+
+[project.urls]
+Homepage = "https://github.com/Goplop0959/pnasys-ses"
+Repository = "https://github.com/Goplop0959/pnasys-ses"
+Issues = "https://github.com/Goplop0959/pnasys-ses/issues"
+
+[project.scripts]
+pnases = "pnasys_ses.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
