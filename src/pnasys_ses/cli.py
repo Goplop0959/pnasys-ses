@@ -24,7 +24,8 @@ def main() -> None:
         print("2) Read/decrypt an entry")
         print("3) List entries")
         print("4) Delete an entry")
-        print("5) Exit")
+        print("5) Update package (pip install -U pnasys-ses)")
+        print("6) Exit")
         choice = _prompt("> ")
         try:
             if choice == "1":
@@ -51,6 +52,13 @@ def main() -> None:
                 directory = _prompt("Directory (empty = default): ") or None
                 print("Deleted." if SES.DeleteEncryptedFile(access, directory) else "Not found.")
             elif choice == "5":
+                import subprocess
+                import sys as _sys
+
+                r = subprocess.run([_sys.executable, "-m", "pip", "install", "-U",
+                                    "pnasys-ses"])
+                print("Updated." if r.returncode == 0 else "Update failed.")
+            elif choice == "6":
                 print("Exiting.")
                 break
             else:
