@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pnasys-ses"
-version = "0.1.1"
+version = "0.1.2"
 description = "PNASystems Secure Encryption Service — TPM/file vault with access+encryption keys"
 readme = "README.md"
 requires-python = ">=3.10"
